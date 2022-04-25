@@ -118,7 +118,8 @@
             </v-toolbar>
             <v-card-text>
               <span v-html="selectedEvent.details"></span>
-              <FormService/>
+             <!-- <FormService/> -->
+             <StepsForm/>
             </v-card-text>
             <v-card-actions>
 
@@ -131,13 +132,11 @@
 </template>
 
 <script>
-import FormService from './FormService.vue'
+//import FormService from './FormService.vue'
+import StepsForm from './StepsForm.vue'
 
   export default {
-  components: { FormService },
-    component: {
-      FormService
-    },
+  components: { StepsForm },
 
     data: () => ({
       focus: '',
