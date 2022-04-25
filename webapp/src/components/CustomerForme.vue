@@ -4,12 +4,14 @@
     ref="form"
     v-model="valid"
     lazy-validation
-    class="pr-1"
   >
-  <v-container class="pr-1">
+  <v-container>
     <v-row>
       <v-col>
-        <strong class="primary--text py-1">New Service</strong>
+        <v-title
+        color: black>
+        <p font-color:black><b>New Service</b></p>
+        </v-title>
       </v-col>
     </v-row>
   </v-container>
@@ -18,7 +20,7 @@
     <v-row>
       <v-col
         cols="12"
-          md="6"
+          md="4"
       >
         <v-text-field
         v-model="ServiceName"
@@ -26,73 +28,15 @@
         :rules="nameRules"
         label="Service Name"
         required
-        outlined
       ></v-text-field>
       </v-col>
       <v-col
         cols="12"
-          md="6"
+          md="4"
       >
-        <v-text-field
-        v-model="category"
-        :counter="10"
-        :rules="nameRules"
-        label="Category"
-        required
-        outlined
-      ></v-text-field>
+
       </v-col>
     </v-row>
-
-  <v-row>
-    <v-col
-      cols="12"
-      md="12"
-
-    >
-        <v-text-field
-        v-model="desciption"
-        :counter="10"
-        :rules="nameRules"
-        label="Description"
-        required
-        outlined
-      ></v-text-field>
-    </v-col>
-
-  </v-row>
-
-  <v-row>
-    <v-col
-      cols="12"
-      md="6"
-    >
-      <v-text-field
-        v-model="timeBlock"
-        :counter="10"
-        :rules="nameRules"
-        label="Time Block"
-        required
-        outlined
-      ></v-text-field>
-    </v-col>
-
-    <v-col
-      cols="12"
-      md="6"
-    >
-      <v-text-field
-        v-model="cost"
-        :counter="10"
-        :rules="nameRules"
-        label="Cost"
-        required
-        outlined
-      ></v-text-field>
-    </v-col>
-
-  </v-row>
-
   </v-container>
 
    
