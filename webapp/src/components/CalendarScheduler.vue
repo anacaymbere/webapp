@@ -140,7 +140,7 @@ import StepsForm from './StepsForm.vue'
 
     data: () => ({
       focus: '',
-      type: 'month',
+      type: 'week',
       typeToLabel: {
         month: 'Month',
         week: 'Week',
