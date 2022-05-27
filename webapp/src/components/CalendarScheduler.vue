@@ -120,11 +120,11 @@
               <span v-html="selectedEvent.details"></span>
              <!-- <FormService/> -->
              <StepsForm/>
-            </v-card-text>
-            <v-card-actions>
-
+            </v-card-text>             
+            <v-card-actions>              
             </v-card-actions>
-          </v-card>
+          </v-card>            
+
         </v-menu>
       </v-sheet>
     </v-col>
@@ -139,6 +139,7 @@ import StepsForm from './StepsForm.vue'
   components: { StepsForm },
 
     data: () => ({
+      newAppoitment: false,
       focus: '',
       type: 'week',
       typeToLabel: {
@@ -150,6 +151,7 @@ import StepsForm from './StepsForm.vue'
       selectedEvent: {},
       selectedElement: null,
       selectedOpen: false,
+      selectedOpen2: false,
       events: [],
       colors: ['blue', 'indigo', 'deep-purple', 'cyan', 'green', 'orange', 'grey darken-1'],
       names: ['Meeting', 'Computer Formatting', 'Software Upgrade', 'SSD Change', 'Web Configuration', 'Hardware Upgrade', 'Conference', 'RAM Change'],
@@ -189,6 +191,8 @@ import StepsForm from './StepsForm.vue'
         }
 
         nativeEvent.stopPropagation()
+
+        this.newAppoitment = true
       },
       updateRange ({ start, end }) {
         const events = []
