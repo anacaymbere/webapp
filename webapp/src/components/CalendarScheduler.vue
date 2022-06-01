@@ -1,18 +1,18 @@
 <template>
-  <v-row class="fill-height">
-    <v-col>
+  <v-row class="fill-height div">
+    <v-col class="col">
       <v-sheet height="64">
         <v-toolbar
           flat
         >
-          <v-btn
+        <!--  <v-btn
             outlined
             class="mr-4"
             color="grey darken-2"
             @click="setToday"
           >
             Today
-          </v-btn>
+          </v-btn> -->
           <v-btn
             fab
             text
@@ -226,3 +226,34 @@ import StepsForm from './StepsForm.vue'
     },
   }
 </script>
+
+<style scoped>
+
+  .div {
+    margin-left: 45px;
+    margin-right: 5px;
+    margin-top: 0px;
+    padding: 0px;
+    padding-bottom: 0px !important;
+
+    border-radius: 6px;
+    border-color: #FFFFFF;
+    border-width: 1px;
+    border-style: solid;
+
+    
+
+  }
+
+  .col {
+    margin: 0px;
+    padding: 0px;
+    background-color: #FFFFFF;
+  }
+
+  .fill-height {
+    height: 95%;
+
+  }
+
+</style>
