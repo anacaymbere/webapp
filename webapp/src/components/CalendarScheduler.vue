@@ -39,6 +39,16 @@
             {{ $refs.calendar.title }}
           </v-toolbar-title>
           <v-spacer></v-spacer>
+          <v-btn
+              fab
+              color="cyan accent-2"
+              bottom
+              right
+              class="btn-margin"
+              @click="dialog = !dialog"
+            >
+              <v-icon>mdi-plus</v-icon>
+          </v-btn>
           <v-menu
             bottom
             right
@@ -82,8 +92,8 @@
           :event-color="getEventColor"
           :type="type"
           @click:event="showEvent"
-          @click:more="viewDay"
-          @click:date="viewDay"
+          @click:more="dialog = true"
+          @click:date="dialog = true"
           @change="updateRange"
         ></v-calendar>
         <v-menu
@@ -118,28 +128,69 @@
             </v-toolbar>
             <v-card-text>
               <span v-html="selectedEvent.details"></span>
-             <!-- <FormService/> -->
-             <StepsForm/>
+             <FormService />
             </v-card-text>             
             <v-card-actions>              
             </v-card-actions>
           </v-card>            
 
         </v-menu>
+         <v-dialog
+          v-model="dialog"
+          max-width="500px"
+        >
+          <v-card>
+            <v-toolbar
+              color="grey light-1"
+              
+            >
+            <v-btn icon>
+                <v-icon>mdi-pencil</v-icon>
+              </v-btn>
+              <v-toolbar-title >New Appointment</v-toolbar-title>
+              <v-spacer></v-spacer>
+              <v-btn icon>
+                <v-icon>mdi-heart</v-icon>
+              </v-btn>
+              <v-btn icon>
+                <v-icon>mdi-dots-vertical</v-icon>
+              </v-btn>
+              <v-btn icon @click="dialog = false">
+                <v-icon>mdi-close</v-icon>
+              </v-btn>
+            </v-toolbar>
+            <v-card-text>
+              <StepsForm />
+            </v-card-text>
+
+            <v-card-actions>
+              <v-spacer></v-spacer>
+
+              <v-btn
+                text
+                color="primary"
+                @click="dialog = false"
+              >
+                Submit
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
+
       </v-sheet>
     </v-col>
   </v-row>
 </template>
 
 <script>
-//import FormService from './FormService.vue'
+import FormService from './FormService.vue'
 import StepsForm from './StepsForm.vue'
 
   export default {
-  components: { StepsForm },
+  components: { StepsForm,  FormService},
 
     data: () => ({
-      newAppoitment: false,
+      dialog: false,
       focus: '',
       type: 'week',
       typeToLabel: {
@@ -151,15 +202,15 @@ import StepsForm from './StepsForm.vue'
       selectedEvent: {},
       selectedElement: null,
       selectedOpen: false,
-      selectedOpen2: false,
       events: [],
-      colors: ['blue', 'indigo', 'deep-purple', 'cyan', 'green', 'orange', 'grey darken-1'],
+      colors: ['blue', 'indigo', 'deep-purple', 'cyan', 'green', 'orange', 'grey darken-2'],
       names: ['Meeting', 'Computer Formatting', 'Software Upgrade', 'SSD Change', 'Web Configuration', 'Hardware Upgrade', 'Conference', 'RAM Change'],
     }),
     mounted () {
       this.$refs.calendar.checkChange()
     },
     methods: {
+
       viewDay ({ date }) {
         this.focus = date
         this.type = 'day'
@@ -192,7 +243,7 @@ import StepsForm from './StepsForm.vue'
 
         nativeEvent.stopPropagation()
 
-        this.newAppoitment = true
+        
       },
       updateRange ({ start, end }) {
         const events = []
@@ -254,6 +305,10 @@ import StepsForm from './StepsForm.vue'
   .fill-height {
     height: 95%;
 
+  }
+
+  .btn-margin {
+    margin-right: 10px;
   }
 
 </style>

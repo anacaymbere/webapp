@@ -13,7 +13,7 @@
           <v-img src="https://randomuser.me/api/portraits/men/85.jpg"></v-img>
         </v-list-item-avatar>
 
-        <v-list-item-title>John Assey</v-list-item-title>
+        <v-list-item-title>Brandit Visuals</v-list-item-title>
 
         <v-btn
           icon
