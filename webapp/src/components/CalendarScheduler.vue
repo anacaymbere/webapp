@@ -137,9 +137,11 @@
         </v-menu>
          <v-dialog
           v-model="dialog"
-          max-width="500px"
+          max-height="90%"
+          max-width="60%"
+          
         >
-          <v-card>
+          <v-card>   
             <v-toolbar
               color="grey light-1"
               
@@ -159,7 +161,9 @@
                 <v-icon>mdi-close</v-icon>
               </v-btn>
             </v-toolbar>
-            <v-card-text>
+            <v-card-text
+              class="card-text-padding"
+            >
               <StepsForm />
             </v-card-text>
 
@@ -310,5 +314,11 @@ import StepsForm from './StepsForm.vue'
   .btn-margin {
     margin-right: 10px;
   }
+
+  .card-text-padding {
+    padding: 0% !important;
+  }
+
+
 
 </style>

@@ -25,35 +25,38 @@
     </v-stepper-header>
 
     <v-stepper-items>
-      <v-stepper-content step="1">
+      <v-stepper-content step="1"
+        class="form-padding"
+      >
         <v-card
           class="mb-12"
-          height="200px"
+          height="100%"
         >
-          <v-card-text>
-            <FormService />
+          <v-card-text
+          >
+            <FormNewAppointmentBasicInformation />
           </v-card-text>
         </v-card>
 
         <v-btn
           color="primary"
           @click="e1 = 2"
+          min-width="100%"
         >
           Continue
         </v-btn>
 
-        <v-btn text>
-          Cancel
-        </v-btn>
       </v-stepper-content>
 
-      <v-stepper-content step="2">
+      <v-stepper-content step="2"
+        class="form-padding"
+      >
         <v-card
           class="mb-12"
-          height="200px"
+          height="100%"
         >
           <v-card-text>
-            <FormService />
+            <FormNewAppointmentBasicInformation />
           </v-card-text>
         </v-card>
 
@@ -64,24 +67,24 @@
           Continue
         </v-btn>
 
-        <v-btn text>
-          Cancel
-        </v-btn>
       </v-stepper-content>
 
-      <v-stepper-content step="3">
+      <v-stepper-content step="3"
+        class="form-padding"
+      >
         <v-card
-          class="mb-12"
-          height="200px"
+          class="mb-12 box-shadow-none"
+          height="100%"
         >
           <v-card-text>
-            <FormService />
+            <FormNewAppointmentBasicInformation />
           </v-card-text>
         </v-card>
 
         <v-btn
           color="primary"
           @click="e1 = 1"
+          class="btn-margin"
         >
           Continue
         </v-btn>
@@ -95,11 +98,11 @@
 </template>
 
 <script>
-import FormService from './FormService.vue'
+import FormNewAppointmentBasicInformation from './FormNewAppointmentBasicInformation.vue'
 
   export default {
 components: {
-  FormService
+  FormNewAppointmentBasicInformation
 
 },
 
@@ -110,3 +113,19 @@ components: {
     },
   }
 </script>
+
+<style scoped>
+
+    .form-padding {
+      padding: 1px 0px 0px 0px;
+    }
+
+    .btn-margin {
+      margin-left: 5px !important;
+    }
+
+    .v-sheet.v-card{
+      box-shadow: none !important;
+    }
+
+</style>

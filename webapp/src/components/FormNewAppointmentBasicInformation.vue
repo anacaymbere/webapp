@@ -9,7 +9,8 @@
   <v-container class="pr-1">
     <v-row>
       <v-col>
-        <strong class="primary--text py-1">New Service</strong>
+        <h1><strong class="roboto py-1">New Appointment</strong></h1>
+        <p class="roboto py-1">Total: $250.00</p>
       </v-col>
     </v-row>
   </v-container>
@@ -21,10 +22,10 @@
           md="6"
       >
         <v-text-field
-        v-model="ServiceName"
+        v-model="customer"
         :counter="10"
         :rules="nameRules"
-        label="Service Name"
+        label="Select Customer"
         required
         outlined
       ></v-text-field>
@@ -34,10 +35,10 @@
           md="6"
       >
         <v-text-field
-        v-model="category"
+        v-model="ServiceName"
         :counter="10"
         :rules="nameRules"
-        label="Category"
+        label="Select Service Name"
         required
         outlined
       ></v-text-field>
@@ -47,14 +48,29 @@
   <v-row>
     <v-col
       cols="12"
-      md="12"
+      md="6"
 
     >
         <v-text-field
-        v-model="desciption"
+        v-model="time"
         :counter="10"
         :rules="nameRules"
-        label="Description"
+        label="Time"
+        required
+        outlined
+      ></v-text-field>
+    </v-col>
+
+        <v-col
+      cols="12"
+      md="6"
+
+    >
+      <v-text-field
+        v-model="ampm"
+        :counter="10"
+        :rules="nameRules"
+        label="AM/PM"
         required
         outlined
       ></v-text-field>
@@ -65,27 +81,30 @@
   <v-row>
     <v-col
       cols="12"
-      md="6"
+      md="12"
     >
       <v-text-field
-        v-model="timeBlock"
+        v-model="inHouseNotes"
         :counter="10"
         :rules="nameRules"
-        label="Time Block"
+        label="In house notes"
         required
         outlined
       ></v-text-field>
     </v-col>
 
+  </v-row>
+
+    <v-row>
     <v-col
       cols="12"
-      md="6"
+      md="12"
     >
       <v-text-field
-        v-model="cost"
+        v-model="notesForTheCustomer"
         :counter="10"
         :rules="nameRules"
-        label="Cost"
+        label="Notes for the customer"
         required
         outlined
       ></v-text-field>
@@ -95,53 +114,6 @@
 
   </v-container>
 
-   
-
-    <v-text-field
-      v-model="email"
-      :rules="emailRules"
-      label="E-mail"
-      required
-    ></v-text-field>
-
-    <v-select
-      v-model="select"
-      :items="items"
-      :rules="[v => !!v || 'Item is required']"
-      label="Service type"
-      required
-    ></v-select>
-
-    <v-checkbox
-      v-model="checkbox"
-      :rules="[v => !!v || 'You must agree to continue!']"
-      label="Do you agree?"
-      required
-    ></v-checkbox>
-
-    <v-btn
-      :disabled="!valid"
-      color="success"
-      class="mr-4"
-      @click="validate"
-    >
-      Validate
-    </v-btn>
-
-    <v-btn
-      color="error"
-      class="mr-4"
-      @click="reset"
-    >
-      Reset Form
-    </v-btn>
-
-    <v-btn
-      color="warning"
-      @click="resetValidation"
-    >
-      Reset Validation
-    </v-btn>
   </v-form>
 </template>
 
