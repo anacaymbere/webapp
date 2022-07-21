@@ -5,7 +5,8 @@
         :complete="e1 > 1"
         step="1"
       >
-        Name of step 1
+      <p>STEP 1</p>
+      <strong> Basic Information </strong>
       </v-stepper-step>
 
       <v-divider></v-divider>
@@ -14,13 +15,15 @@
         :complete="e1 > 2"
         step="2"
       >
-        Name of step 2
+      <p>STEP 2</p>
+      <strong> Select Adress </strong>        
       </v-stepper-step>
 
       <v-divider></v-divider>
 
       <v-stepper-step step="3">
-        Name of step 3
+      <p>STEP 3</p>
+      <strong> Basic Details </strong>   
       </v-stepper-step>
     </v-stepper-header>
 
@@ -41,9 +44,9 @@
         <v-btn
           color="primary"
           @click="e1 = 2"
-          min-width="100%"
+          class="btn-margin"
         >
-          Continue
+          Next
         </v-btn>
 
       </v-stepper-content>
@@ -64,7 +67,7 @@
           color="primary"
           @click="e1 = 3"
         >
-          Continue
+          Next
         </v-btn>
 
       </v-stepper-content>
@@ -86,7 +89,7 @@
           @click="e1 = 1"
           class="btn-margin"
         >
-          Continue
+          Finish
         </v-btn>
 
         <v-btn text>
@@ -121,7 +124,8 @@ components: {
     }
 
     .btn-margin {
-      margin-left: 5px !important;
+      margin-left: 35% !important;
+      width: 30% !important;
     }
 
     .v-sheet.v-card{

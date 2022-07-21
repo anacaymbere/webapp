@@ -143,20 +143,11 @@
         >
           <v-card>   
             <v-toolbar
-              color="grey light-1"
+              color="blue"
               
             >
-            <v-btn icon>
-                <v-icon>mdi-pencil</v-icon>
-              </v-btn>
               <v-toolbar-title >New Appointment</v-toolbar-title>
               <v-spacer></v-spacer>
-              <v-btn icon>
-                <v-icon>mdi-heart</v-icon>
-              </v-btn>
-              <v-btn icon>
-                <v-icon>mdi-dots-vertical</v-icon>
-              </v-btn>
               <v-btn icon @click="dialog = false">
                 <v-icon>mdi-close</v-icon>
               </v-btn>
