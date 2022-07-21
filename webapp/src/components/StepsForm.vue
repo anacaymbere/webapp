@@ -34,11 +34,16 @@
         <v-card
           class="mb-12"
           height="100%"
+          style="margin:0px !important"
+
         >
           <v-card-text
+          
           >
             <FormNewAppointmentBasicInformation />
           </v-card-text>
+
+          
         </v-card>
 
         <v-btn
@@ -121,15 +126,21 @@ components: {
 
     .form-padding {
       padding: 1px 0px 0px 0px;
+      margin: 0px;
     }
 
     .btn-margin {
       margin-left: 35% !important;
       width: 30% !important;
+      margin-bottom: 5% !important;
     }
 
     .v-sheet.v-card{
       box-shadow: none !important;
+    }
+
+    .margin-zero {
+      margin:"0px" !important
     }
 
 </style>
